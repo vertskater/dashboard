@@ -44,6 +44,24 @@ body {
       align-self: center;
   cursor: pointer;
 }
+.admin-content .template-grid {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+.admin-content .template-grid img {
+  grid-row: 1/3;
+  align-self: center;
+  justify-self: center;
+  width: 70px;
+}
+.admin-content .template-grid span {
+  -ms-flex-item-align: end;
+      align-self: end;
+}
+.admin-content .template-grid h5 {
+  font-size: 1.5rem;
+  grid-column: 2/3;
+}
 .admin-content header {
   display: grid;
   grid-template-columns: 3fr 2fr;
@@ -55,28 +73,28 @@ body {
   position: sticky;
   right: 0;
   top: 0;
+  z-index: 999;
+  /* > .template-grid {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    img {
+      grid-row: 1 / 3;
+      align-self: center;
+      justify-self: center;
+      width: 70px;
+    }
+    span {
+      align-self: end;
+    }
+    h5 {
+      font-size: 1.5rem;
+      grid-column: 2 / 3;
+    }
+  } */
 }
 .admin-content header > div img {
   width: 50px;
   border-radius: 50%;
-}
-.admin-content header > .template-grid {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-}
-.admin-content header > .template-grid img {
-  grid-row: 1/3;
-  align-self: center;
-  justify-self: center;
-  width: 70px;
-}
-.admin-content header > .template-grid span {
-  -ms-flex-item-align: end;
-      align-self: end;
-}
-.admin-content header > .template-grid h5 {
-  font-size: 1.5rem;
-  grid-column: 2/3;
 }
 .admin-content header div:nth-child(1) {
   padding: 10px;
@@ -132,7 +150,7 @@ body {
 .admin-content .main-content {
   padding: 30px 5%;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 3fr 1.5fr;
   background-color: #0891b2;
   -webkit-column-gap: 20px;
      -moz-column-gap: 20px;
@@ -149,7 +167,7 @@ body {
 }
 .admin-content .main-content .projects-content .project {
   background-color: #ccfbf1;
-  padding: 30px;
+  padding: 20px;
   border-radius: 10px;
 }
 .admin-content .main-content .projects-content .project > span {
@@ -167,4 +185,61 @@ body {
 .admin-content .main-content .projects-content p {
   font-size: 0.8rem;
   color: #164e63;
+}
+.admin-content .main-content .infos {
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 20px;
+}
+.admin-content .main-content .infos p {
+  font-size: 0.6rem;
+  color: #164e63;
+}
+.admin-content .main-content .infos h5 {
+  font-size: 0.8rem;
+}
+.admin-content .main-content .infos .announcements-content,
+.admin-content .main-content .infos .trending-content {
+  padding: 20px;
+  background-color: #ccfbf1;
+  border-radius: 5px;
+  display: grid;
+  gap: 30px;
+}
+.admin-content .main-content .infos .announcements-content > span,
+.admin-content .main-content .infos .trending-content > span {
+  position: relative;
+}
+.admin-content .main-content .infos .announcements-content > span::after,
+.admin-content .main-content .infos .trending-content > span::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #164e63;
+  position: absolute;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+.admin-content .main-content .infos .announcements-content > span:last-child::after,
+.admin-content .main-content .infos .trending-content > span:last-child::after {
+  content: "";
+  width: 0;
+  height: 0;
+}
+.admin-content .main-content .infos .trending-content img {
+  width: 100%;
+  border-radius: 50%;
+}
+.admin-content .main-content .infos .trending-content .template-grid {
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+}
+.admin-content .main-content .infos .trending-content .template-grid > span {
+  font-size: 0.8rem;
+  color: #0891b2;
+}
+.admin-content .main-content .infos .trending-content .template-grid > h5 {
+  color: #0891b2;
 }/*# sourceMappingURL=style.css.map */
